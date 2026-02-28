@@ -187,7 +187,37 @@ Pero esta práctica manual es perfecta para entender:
 
 ---
 
-## 9) Plantilla genérica (para cualquier proyecto)
+## 10) Siguiente Nivel: El archivo .jar (Java Archive)
+
+En la industria, no entregas una carpeta llena de archivos `.class` sueltos. Entregas un único archivo comprimido llamado **JAR**. Es como un `.zip` pero con esteroides que Java sabe ejecutar.
+
+### Paso 1: Crear el JAR (Empaquetar)
+
+Una vez que ya has compilado (tienes la carpeta `out`), ejecutas esto:
+
+```bash
+jar -cvfe buscador.jar lab.rutas.Buscador -C out .
+```
+
+**¿Qué significa esto?**
+
+- `-c`: **C**reate (Crear).
+- `-v`: **V**erbose (Cuéntame todo lo que haces).
+- `-f`: **F**ile (El nombre del archivo será `buscador.jar`).
+- `-e`: **E**ntry-point (Le dices cuál es la clase que tiene el main: `lab.rutas.Buscador`).
+- `-C out .`: "Vete a la carpeta `out` y mete todo lo que hay dentro".
+
+### Paso 2: Ejecutar el JAR
+
+Ahora ya no necesitas el `-cp` ni el nombre de la clase, porque todo eso ya está "dentro" del paquete.
+
+```bash
+java -jar buscador.jar data/SecretFile.txt
+```
+
+---
+
+## 11) Plantilla genérica (para cualquier proyecto)
 
 Si cambian nombres de carpetas, aplica siempre el mismo patrón:
 
