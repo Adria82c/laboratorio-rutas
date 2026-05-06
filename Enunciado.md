@@ -55,6 +55,7 @@ Ubícate en la raíz del proyecto (`laboratorio-rutas/`).
 ```bash
 javac -d out src/main/java/lab/rutas/Buscador.java
 ```
+-d (directory) especifica que el Buscador.class se ubica en la carpeta 'out'
 
 Resultado esperado:
 
